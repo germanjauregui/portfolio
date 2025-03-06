@@ -994,7 +994,6 @@ blockquote {
 .grid-container-1,
 .grid-container-2 {
   display: flex;
-  animation-duration: 20s;  /* Puedes ajustar esta duración según lo rápido que quieras el movimiento */
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -1002,10 +1001,12 @@ blockquote {
 /* Aplicamos la animación a los contenedores */
 .grid-container-1 {
   animation-name: moverIzquierdaADerecha;
+  animation-duration: 20s;  /* Ajusta esta duración según lo rápido que quieras el movimiento */
 }
 
 .grid-container-2 {
   animation-name: moverDerechaAIzquierda;
+  animation-duration: 20s;  /* Ajusta esta duración según lo rápido que quieras el movimiento */
 }
 
 /* Asegúrate de que los items se alineen en fila */
