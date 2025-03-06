@@ -963,35 +963,3 @@ blockquote {
 	top: 0;
 	left: -2400px;
 }
-
-@keyframes moveLeftToRight {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes moveRightToLeft {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-.grid-container-1 {
-    display: flex;
-    gap: 10px; /* Espacio entre imágenes */
-    overflow: hidden;
-    animation: moveLeftToRight 10s linear infinite;
-}
-
-.grid-container-2 {
-    display: flex;
-    gap: 10px; /* Espacio entre imágenes */
-    overflow: hidden;
-    animation: moveRightToLeft 10s linear infinite;
-}
