@@ -963,3 +963,54 @@ blockquote {
 	top: 0;
 	left: -2400px;
 }
+
+/* Animación para mover el grid-container-1 de izquierda a derecha */
+@keyframes moverIzquierdaADerecha {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animación para mover el grid-container-2 de derecha a izquierda */
+@keyframes moverDerechaAIzquierda {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Estilo general para los contenedores */
+.grid-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-container-1,
+.grid-container-2 {
+  display: flex;
+  animation-duration: 20s;  /* Puedes ajustar esta duración según lo rápido que quieras el movimiento */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Aplicamos la animación a los contenedores */
+.grid-container-1 {
+  animation-name: moverIzquierdaADerecha;
+}
+
+.grid-container-2 {
+  animation-name: moverDerechaAIzquierda;
+}
+
+/* Asegúrate de que los items se alineen en fila */
+.grid-item {
+  flex: 0 0 auto;
+  width: 25%; /* Ajusta el tamaño de los elementos según tus necesidades */
+}
+
