@@ -302,43 +302,74 @@
 </section>
 
 <section data-bs-version="5.1" class="form5 cid-uEtpuQbFJx" id="contact-form-2-uEtpuQbFJx">
-    
-    
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 content-head">
                 <div class="mbr-section-head mb-5">
                     <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Let's talk about design!</strong></h3>
-                    
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="i6MqNkB98tU65auXVyE4APsDMk3oHtRbFh8IvxDoBQjpbUHdHN0Mr0UDS3zNQRi5w0jUZFgDVIlD+Kt3CRFGL4epDNZaekbIQZiy53RHbY3GB+2k/PEIM0tzB3Rg8v4M">
+                <form id="contact-form" action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                    <input type="hidden" name="email" data-form-email="true">
                     <div class="row">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thank you for filling in the form! Your message has been sent successfully.</div>
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">
+                            Thank you for filling in the form! Your message has been sent successfully.
+                        </div>
                         <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
                             Oops...! some problem!
                         </div>
                     </div>
                     <div class="dragArea row">
-                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
-                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-contact-form-2-uEtpuQbFJx">
+                        <div class="col-md col-sm-12 form-group mb-3">
+                            <input type="text" name="name" placeholder="Name" class="form-control" id="name" required>
+                            <span class="error-message text-danger"></span>
                         </div>
-                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-contact-form-2-uEtpuQbFJx">
+                        <div class="col-md col-sm-12 form-group mb-3">
+                            <input type="email" name="email" placeholder="Email" class="form-control" id="email" required>
+                            <span class="error-message text-danger"></span>
                         </div>
-                        <div class="col-12 form-group mb-3" data-for="textarea">
-                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-contact-form-2-uEtpuQbFJx"></textarea>
+                        <div class="col-12 form-group mb-3">
+                            <textarea name="message" placeholder="Message" class="form-control" id="message" required></textarea>
+                            <span class="error-message text-danger"></span>
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7"><span class="mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>Send&nbsp; Message</button></div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn btn-primary display-7">
+                                <span class="mobi-mbri mobi-mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>Send&nbsp; Message
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    let isValid = true;
+    const fields = ["name", "email", "message"];
+    
+    fields.forEach(field => {
+        const input = document.getElementById(field);
+        const errorMessage = input.nextElementSibling;
+        
+        if (!input.value.trim()) {
+            errorMessage.textContent = "This field is required.";
+            isValid = false;
+        } else {
+            errorMessage.textContent = "";
+        }
+    });
+
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
+</script>
+
 
 <section data-bs-version="5.1" class="footer3 cid-uEtpuQcrk9" once="footers" id="footer-6-uEtpuQcrk9">
     
